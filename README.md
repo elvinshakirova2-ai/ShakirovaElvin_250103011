@@ -1,0 +1,2 @@
+# ShakirovaElvin_250103011
+Lab work - THE SMART HOME IoT INTEGRATION 
