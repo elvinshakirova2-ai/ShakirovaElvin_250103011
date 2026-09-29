@@ -19,7 +19,21 @@ public class BulbAdapter implements SmartDevice{
 
     }
     public boolean isOn(){
-       if(bulb.hasPower()==true && bulb.readBrightness())
+       return bulb.hasPower() &&bulb.readBrightness() > 0;
+    }
+    public int getPowerPercent(){
+        final int K=1;
+        int raw= bulb.readBrightness();
+        if(raw==0){
+            return 0;
+        }
+        int calibrated=(raw*100)/255+K;
+        if(calibrated>100){
+            return 100;
+        }
+        return calibrated;
+
+
     }
 
 
